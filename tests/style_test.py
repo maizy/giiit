@@ -18,13 +18,13 @@ src_dirs = [path.join(project_root, 'giiit'),
             path.join(project_root, 'tests')]
 
 
-class StyleTest(unittest.TestCase):
+class StyleTestCase(unittest.TestCase):
     def test_pep8(self):
         pep8style = pep8.StyleGuide(
             show_pep8=False,
             show_source=True,
             repeat=True,
-            max_line_lenght=119,
+            max_line_length=119,
             statistics=True,
         )
         result = pep8style.check_files(src_dirs)
@@ -34,7 +34,7 @@ class StyleTest(unittest.TestCase):
             self.fail('PEP8 styles errors')
 
 
-class PyFlakesTest(unittest.TestCase):
+class PyFlakesTestCase(unittest.TestCase):
 
     def test_pyflakes(self):
         warn_stream = StringIO()
