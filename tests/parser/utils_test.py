@@ -7,6 +7,7 @@ import unittest
 
 from giiit.parsers.utils import strip_comments
 
+
 class UtilsTestCase(unittest.TestCase):
     def test_strip_comments(self):
         output = '''\

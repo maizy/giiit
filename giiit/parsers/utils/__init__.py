@@ -7,5 +7,6 @@ import re
 
 _strip_regexp = re.compile(r'^#.*$\n?', re.UNICODE | re.MULTILINE)
 
+
 def strip_comments(output):
     return re.sub(_strip_regexp, '', output)

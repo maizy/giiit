@@ -1,2 +1,4 @@
 # developer env only
 nose
+pep8
+pyflakes
