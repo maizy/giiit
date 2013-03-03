@@ -4,23 +4,9 @@
 from __future__ import unicode_literals, absolute_import
 
 import re
-from collections import namedtuple
-from functools import total_ordering
-from distutils.version import LooseVersion as _LooseVersion
 
 from giiit.parsers import WrongOutputError
-
-
-@total_ordering
-class Version(namedtuple('_Version', ['version', 'parts', 'major', 'minor'])):
-    def __unicode__(self):
-        return 'Version {0}'.format(self.version)
-
-    def __eq__(self, other):
-        return _LooseVersion(self.version) == _LooseVersion(other.version)
-
-    def __le__(self, other):
-        return _LooseVersion(self.version) < _LooseVersion(other.version)
+from giiit.parsers.results import Version
 
 
 def version(output):

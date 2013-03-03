@@ -1,3 +1,6 @@
 ## Giiit
 
-Abstract git command's output parser and params builder.
+Some git helpers:
+* command's output parser
+* command params builder
+* high level git logic

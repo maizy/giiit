@@ -3,25 +3,9 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
-from collections import namedtuple
-
 from giiit.parsers import WrongOutputError
-
-STATUS_CODES = {
-    ' ': 'unmodified',
-    'M': 'modified',
-    'A': 'added',
-    'D': 'deleted',
-    'R': 'renamed',
-    'C': 'copied',
-    'U': 'unmerged',
-    '?': 'untracked',
-    '!': 'ignored',
-}
-
-
-Entity = namedtuple('Entity', ['work_tree_status_code', 'work_tree_status', 'index_status_code', 'index_status',
-                               'path', 'new_path'])
+from giiit.parsers.results import Entity
+from giiit.parsers.data import STATUS_CODES
 
 
 def porcelain_z(output):

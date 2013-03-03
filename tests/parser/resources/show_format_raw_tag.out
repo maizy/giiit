@@ -1,0 +1,20 @@
+tag test
+Tagger: Nikita Kovaliov <nikita@maizy.ru>
+
+test tag
+
+commit f0c28d2215ec95956dfab156e3aa36a362b81c73
+tree fd16a5e33c0c0f4488a8ee6fde8c9a5344cbef9e
+parent 965263cde4fe43f536e6a07d2d247c23c8737c42
+author Nikita Kovaliov <nikita@maizy.ru> 1362315523 +0400
+committer Nikita Kovaliov <nikita@maizy.ru> 1362315523 +0400
+
+    new file
+
+diff --git a/ghghgh.txt b/ghghgh.txt
+new file mode 100644
+index 0000000..fa49b07
+--- /dev/null
++++ b/ghghgh.txt
+@@ -0,0 +1 @@
++new file

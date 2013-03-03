@@ -3,10 +3,10 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
-__version__ = '0.1'
-__license__ = 'MIT'
-__author__ = 'Nikita Kovaliov'
+from giiit.parsers import simple_output
 
 
-class Exception(Exception):
-    pass
+"""
+`git cat-file -b REF`
+"""
+t = simple_output
