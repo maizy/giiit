@@ -4,8 +4,9 @@
 from __future__ import unicode_literals, absolute_import
 
 import unittest
+from collections import namedtuple
 
-from giiit.parsers.utils import strip_comments
+from giiit.parsers.utils import strip_comments, namedtuple_with_defaults
 
 
 class UtilsTestCase(unittest.TestCase):
@@ -29,4 +30,10 @@ not # a comment
 
 '''
         real = strip_comments(output)
+        self.assertEqual(expected, real)
+
+    def namedtuple_defaults_test(self):
+        nt = namedtuple('nt', 'a b c d')
+        expected = nt(a=1, b=None, c=3, d=None)
+        real = namedtuple_with_defaults(nt, c=3, a=1)
         self.assertEqual(expected, real)
