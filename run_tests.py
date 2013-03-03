@@ -13,6 +13,6 @@ if __name__ == '__main__':
     test_dir = path.join(path.dirname(__file__), 'tests')
     argv = sys.argv[:]
     argv.append(test_dir)
-    for i in ['parser']:
+    for i in ['parser', 'logic']:  # tests dir
         argv.append(path.join(test_dir, i))
     nose.run_exit(argv=argv)
