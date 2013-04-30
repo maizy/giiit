@@ -1,4 +1,5 @@
 # Giiit
+[![Build Status](https://travis-ci.org/maizy/giiit.png?branch=master)](https://travis-ci.org/maizy/giiit)
 
 Some python powered git helpers:
 
