@@ -3,13 +3,14 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
-import unittest
+from giiit_tests import unittest
 
 from giiit.parsers import WrongOutputError
 from giiit.parsers import version
 
 
 class VersionTestCase(unittest.TestCase):
+
     def test_version(self):
         output = 'git version 1.8.1.1\n'
         expected = version.Version(version='1.8.1.1', parts=['1', '8', '1', '1'],

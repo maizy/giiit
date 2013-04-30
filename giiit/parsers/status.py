@@ -3,6 +3,7 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
+from giiit.multi_version import uu
 from giiit.parsers import WrongOutputError
 from giiit.parsers.results import Entity
 from giiit.parsers.data import STATUS_CODES
@@ -19,7 +20,7 @@ def porcelain_z(output):
     relative to repositiry root.
 
     """
-    output = unicode(output)
+    output = uu(output)
     parts = output.split('\0')
     if parts[-1] == '':
         parts = parts[:-1]

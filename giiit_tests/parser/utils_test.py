@@ -3,8 +3,9 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
-import unittest
 from collections import namedtuple
+
+from giiit_tests import unittest
 
 from giiit.parsers.utils import strip_comments, namedtuple_with_defaults
 

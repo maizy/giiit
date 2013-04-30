@@ -4,13 +4,16 @@
 from __future__ import unicode_literals, absolute_import
 
 from collections import namedtuple
-from functools import total_ordering
 from distutils.version import LooseVersion as _LooseVersion
 
+from giiit.multi_version import PY2, uu, total_ordering, to_str
 
+
+@to_str
 @total_ordering
 class Version(namedtuple('_Version', ['version', 'parts', 'major', 'minor'])):
-    def __unicode__(self):
+
+    def to_str(self):
         return 'Version {0}'.format(self.version)
 
     def __eq__(self, other):
@@ -35,8 +38,8 @@ class _GitObject(object):
         keys = ('{0}={1}'.format(k, v) for k, v in self.__dict__.viewitems())
         return '<{type}: {int}>'.format(type=self.type, int='; '.join(keys))
 
-    def __cmp__(self, other):
-        return cmp(self.__dict__, other.__dict__)
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
 
 
 class Commit(_GitObject):

@@ -3,8 +3,9 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
-import unittest
 from os import path
+
+from giiit_tests import unittest
 
 from giiit.parsers import status
 from giiit.parsers.results import Entity

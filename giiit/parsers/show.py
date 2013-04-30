@@ -3,6 +3,7 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
+from giiit.multi_version import uu
 from giiit.parsers import WrongOutputError, ParserError
 from giiit.parsers.results import Commit, Blob
 from giiit.parsers.data import GIT_OBJECTS_TYPES
@@ -15,7 +16,7 @@ def format_raw(output, force_blob=False, ref=None):
 
     ref only used with force_blob=True.
     """
-    output = unicode(output)
+    output = uu(output)
     if output[-1] == '\n':
         output = output[:-1]
     # blog returned as is

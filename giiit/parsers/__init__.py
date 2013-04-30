@@ -4,6 +4,7 @@
 from __future__ import unicode_literals, absolute_import
 
 from giiit import Exception
+from giiit.multi_version import uu
 
 
 class ParserError(Exception):
@@ -15,5 +16,5 @@ class WrongOutputError(ParserError):
 
 
 def simple_output(output):
-    output = unicode(output)
+    output = uu(output)
     return output.strip()
