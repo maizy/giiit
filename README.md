@@ -17,7 +17,6 @@ Some python powered git helpers:
 ### Python requirements (dev only, for running tests)
 * nose
 * pep8 (>=1.3)
-* pyflakes
 * unittest2 (for python 2.6 only)
 
 `pip install -r requirements_dev.txt`

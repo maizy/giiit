@@ -28,6 +28,6 @@ class ToStrDecoratorTestCase(unittest.TestCase):
 
     def test_stringify_py3(self):
         if not PY3:
-            self.skipTest('Python 2 only test')
+            self.skipTest('Python 3 only test')
         obj = self.test_class()
         self.assertEqual(self.expected_results, str(obj))

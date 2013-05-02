@@ -7,17 +7,9 @@ from __future__ import unicode_literals, absolute_import
 from os import path
 import pep8
 
-from giiit_tests import unittest
+from giiit_tests import unittest, GIIIT_ROOT, GIIIT_TESTS_ROOT
 
-try:
-    import giiit
-    giiit_root = path.abspath(path.dirname(giiit.__file__))
-except ImportError:
-    giiit_root = path.abspath(path.join(path.dirname(__file__), '..', 'giiit'))
-
-giiit_tests_root = path.abspath(path.dirname(__file__))
-
-src_dirs = [giiit_root, giiit_tests_root]
+src_dirs = [GIIIT_ROOT, GIIIT_TESTS_ROOT]
 
 
 class StyleTestCase(unittest.TestCase):
