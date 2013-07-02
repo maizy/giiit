@@ -3,28 +3,7 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
-from collections import namedtuple
-from distutils.version import LooseVersion as _LooseVersion
-
-from giiit.multi_version import PY2, uu, total_ordering, to_str
-
-
-@to_str
-@total_ordering
-class Version(namedtuple('_Version', ['version', 'parts', 'major', 'minor'])):
-
-    def to_str(self):
-        return 'Version {0}'.format(self.version)
-
-    def __eq__(self, other):
-        return _LooseVersion(self.version) == _LooseVersion(other.version)
-
-    def __le__(self, other):
-        return _LooseVersion(self.version) < _LooseVersion(other.version)
-
-
-Entity = namedtuple('Entity', ['work_tree_status_code', 'work_tree_status', 'index_status_code', 'index_status',
-                               'path', 'new_path'])
+TYPES = ['commit', 'tree', 'tag', 'blob']
 
 
 class _GitObject(object):

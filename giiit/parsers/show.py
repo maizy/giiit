@@ -5,8 +5,7 @@ from __future__ import unicode_literals, absolute_import
 
 from giiit.multi_version import uu
 from giiit.parsers import WrongOutputError, ParserError
-from giiit.parsers.results import Commit, Blob
-from giiit.parsers.data import GIT_OBJECTS_TYPES
+from giiit.parsers.results import objects
 
 
 def format_raw(output, force_blob=False, ref=None):
@@ -21,7 +20,7 @@ def format_raw(output, force_blob=False, ref=None):
         output = output[:-1]
     # blog returned as is
     if force_blob:
-        return Blob(content=output, ref=ref)
+        return objects.Blob(content=output, ref=ref)
 
     # autodetect type
     lines = output.split('\n')
@@ -32,7 +31,7 @@ def format_raw(output, force_blob=False, ref=None):
     if len(type_ref_parts) != 2:
         raise WrongOutputError('Wrong first line format')
     type, ref = type_ref_parts
-    if type not in GIT_OBJECTS_TYPES:
+    if type not in objects.TYPES:
         raise WrongOutputError('Unknown git object type "{0}"'.format(type))
 
     # TODO: tree & tag support
@@ -53,7 +52,7 @@ def format_raw(output, force_blob=False, ref=None):
     res = None
     # construct result
     if type == 'commit':
-        res = Commit(ref=ref)
+        res = objects.Commit(ref=ref)
         for key, value in meta:
             if key == 'tree':
                 res.tree_ref = value

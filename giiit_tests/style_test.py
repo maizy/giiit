@@ -4,7 +4,6 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
-from os import path
 import pep8
 
 from giiit_tests import unittest, GIIIT_ROOT, GIIIT_TESTS_ROOT

@@ -8,8 +8,7 @@ from os import path
 from giiit_tests import unittest
 
 from giiit.parsers import status
-from giiit.parsers.results import Entity
-from giiit.parsers.data import STATUS_CODES
+from giiit.parsers.results import tree
 
 resources = path.join(path.dirname(__file__), 'resources')
 
@@ -21,19 +20,19 @@ class StatusParserTestCase(unittest.TestCase):
     def test_porcelain_z(self):
         expected = [
 
-            Entity(
+            tree.Entity(
                 work_tree_status_code=' ',
-                work_tree_status=STATUS_CODES[' '],
+                work_tree_status=tree.STATUS_CODES[' '],
                 index_status_code='A',
-                index_status=STATUS_CODES['A'],
+                index_status=tree.STATUS_CODES['A'],
                 path='.gitignore',
                 new_path=None),
 
-            Entity(
+            tree.Entity(
                 work_tree_status_code=' ',
-                work_tree_status=STATUS_CODES[' '],
+                work_tree_status=tree.STATUS_CODES[' '],
                 index_status_code='R',
-                index_status=STATUS_CODES['R'],
+                index_status=tree.STATUS_CODES['R'],
                 path='B',
                 new_path='BB')
         ]
