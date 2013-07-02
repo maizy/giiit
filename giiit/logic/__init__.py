@@ -3,8 +3,8 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
-from giiit import Exception
+from giiit import Error
 
 
-class Error(Exception):
+class Error(Error):
     pass

@@ -8,5 +8,5 @@ __license__ = 'MIT'
 __author__ = 'Nikita Kovaliov'
 
 
-class Exception(Exception):
+class Error(Exception):
     pass

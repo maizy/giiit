@@ -3,11 +3,11 @@
 # See LICENSE.txt for details.
 from __future__ import unicode_literals, absolute_import
 
-from giiit import Exception
+from giiit import Error
 from giiit.multi_version import uu
 
 
-class ParserError(Exception):
+class ParserError(Error):
     pass
 
 
