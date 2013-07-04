@@ -8,7 +8,7 @@ from os import path
 from giiit_tests import unittest
 
 from giiit.parsers import status
-from giiit.parsers.results import tree
+from giiit.models import tree
 
 resources = path.join(path.dirname(__file__), 'resources')
 

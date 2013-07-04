@@ -7,7 +7,7 @@ from giiit_tests import unittest
 
 from giiit.parsers import WrongOutputError
 from giiit.parsers.version import version as version_parser
-from giiit.parsers.results import Version
+from giiit.models import Version
 
 
 class VersionTestCase(unittest.TestCase):

@@ -6,7 +6,7 @@ from __future__ import unicode_literals, absolute_import
 import re
 
 from giiit.parsers import WrongOutputError
-from giiit.parsers.results import Version
+from giiit.models import Version
 
 
 def version(output):

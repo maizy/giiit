@@ -6,18 +6,16 @@ from __future__ import unicode_literals, absolute_import
 from giiit_tests import unittest
 
 from giiit.parsers import WrongOutputError, ParserError
-from giiit.parsers.results import ref
+from giiit.models import ref
+from giiit.multi_version import uu
 
 
 class SymbolicRefTestCase(unittest.TestCase):
 
-    def test_full(self):
+    def test_to_str(self):
         full = 'refs/heads/master'
         r = ref.SymbolicRef(full)
-        self.assertEqual(r.full, full)
-        with self.assertRaises(AttributeError):
-            r.full = 'refs/heads/br'
-            del r.full
+        self.assertEqual(uu(r), full)
 
     def test_short(self):
         r = ref.SymbolicRef('refs/heads/master')
@@ -32,10 +30,12 @@ class SymbolicRefTestCase(unittest.TestCase):
 
     def test_get_wrong_type_value(self):
         r = ref.SymbolicRef('refs/oops/master')
-        with self.assertRaises(ParserError):
+        with self.assertRaises(ParserError) as raise_context:
             r.get_type()
+        self.assertEqual(uu(raise_context.exception), 'Unknown ref type "oops"')
 
     def test_get_wrong_type_format(self):
         r = ref.SymbolicRef('refs-heads-master')
-        with self.assertRaises(WrongOutputError):
+        with self.assertRaises(WrongOutputError) as raise_context:
             r.get_type()
+        self.assertEqual(uu(raise_context.exception), 'Wrong ref "refs-heads-master"')

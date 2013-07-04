@@ -8,8 +8,14 @@ PY2 = not PY3
 
 if PY3:
     uu = str
+
+    def to_uu(s):
+        return s.decode('utf-8') if isinstance(s, bytes) else uu(s)
 else:
     uu = unicode
+
+    def to_uu(s):
+        return s.decode('utf-8') if isinstance(s, str) else uu(s)
 
 try:
     from functools import total_ordering

@@ -5,7 +5,7 @@ from __future__ import unicode_literals, absolute_import
 
 from giiit.multi_version import uu
 from giiit.parsers import WrongOutputError
-from giiit.parsers.results.tree import Entity, STATUS_CODES
+from giiit.models.tree import Entity, STATUS_CODES
 
 
 def porcelain_z(output):

@@ -7,7 +7,7 @@ from collections import namedtuple
 
 from giiit_tests import unittest
 
-from giiit.parsers.utils import strip_comments, namedtuple_with_defaults
+from giiit.utils import strip_comments, namedtuple_with_defaults
 
 
 class UtilsTestCase(unittest.TestCase):
